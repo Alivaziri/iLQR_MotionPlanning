@@ -1,0 +1,9 @@
+function [x1] = Dynamics(x,u)
+L = 1.5;
+dt = 0.2;
+Kapa = atan(0.5*tan(u(2)));
+x1 = [x(1) + x(3)*dt*cos(x(4)+Kapa);...
+      x(2) + x(3)*dt*sin(x(4)+Kapa);...
+      x(3) + dt*u(1);...
+      x(4) + dt*x(3)*sin(Kapa)/(L/2)];
+end
